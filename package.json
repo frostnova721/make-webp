@@ -1,0 +1,14 @@
+{
+  "name": "make-webp",
+  "version": "1.0.0",
+  "description": "make webp from video or image",
+  "main": "dist/make-webp.js",
+  "scripts": {
+    "test": "node dist/make-webp.js"
+  },
+  "keywords": [
+    "make-webp"
+  ],
+  "author": "FrostNova",
+  "license": "GPL-3.0"
+}
