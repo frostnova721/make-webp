@@ -41,7 +41,7 @@ const imgToWebp = async(filePath: string, quality?: number, crop?: boolean, auth
  * @param { string } title title of the webp image (optional)
  * @returns { Buffer } webp buffer
  */
-export async function makeStickerFromFile(filePath: string, quality?: number, crop?: boolean, author?: string, title?: string): Promise<Buffer> {
+export async function makeWebpFromFile(filePath: string, quality?: number, crop?: boolean, author?: string, title?: string): Promise<Buffer> {
     if(!fs.existsSync(`${tmpdir()}/stickers`)) fs.mkdirSync(`${tmpdir()}/stickers`)
     const path = filePath
     const mime = (await fromFile(path))?.mime ?? 'unknown/unknown'
@@ -62,7 +62,7 @@ export async function makeStickerFromFile(filePath: string, quality?: number, cr
  * @param { string } title title of the webp image (optional)
  * @returns { Buffer } webp buffer
  */
-export async function makeStickerFromBuffer(buffer: Buffer, quality?: number, crop?: boolean, author?: string, title?: string): Promise<Buffer> {
+export async function makeWebpFromBuffer(buffer: Buffer, quality?: number, crop?: boolean, author?: string, title?: string): Promise<Buffer> {
     if(!fs.existsSync(`${tmpdir()}/stickers`)) fs.mkdirSync(`${tmpdir()}/stickers`)
     const path = tmpdir() + `/stickers/input.${(await fromBuffer(buffer))?.ext}`
     fs.writeFileSync(`${path}`, buffer)
