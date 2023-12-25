@@ -4,11 +4,17 @@
   "description": "make webp from video or image",
   "main": "dist/make-webp.js",
   "scripts": {
-    "test": "node dist/make-webp.js"
+    "build": "tsc",
+    "test": "npm run build && node test.js",
+    "format": "prettier -w make-webp.ts"
   },
   "keywords": [
     "make-webp"
   ],
   "author": "FrostNova",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "file-type": "^16.0.1",
+    "rimraf": "^5.0.5"
+  }
 }
